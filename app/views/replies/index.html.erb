@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to new_reply_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Reply
+  <% end %>
+  <h1>Listing replies</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Body</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @replies) do |reply| %>
+            <td><%= reply.body %></td>
+            <td><%= link_to 'Show', reply %></td>
+        <td><%= link_to 'Edit', edit_reply_path(reply) %></td>
+        <td><%= link_to 'Destroy', reply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

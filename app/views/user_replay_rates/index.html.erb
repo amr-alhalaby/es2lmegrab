@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to new_user_replay_rate_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New User replay rate
+  <% end %>
+  <h1>Listing user_replay_rates</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @user_replay_rates) do |user_replay_rate| %>
+            <td><%= link_to 'Show', user_replay_rate %></td>
+        <td><%= link_to 'Edit', edit_user_replay_rate_path(user_replay_rate) %></td>
+        <td><%= link_to 'Destroy', user_replay_rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

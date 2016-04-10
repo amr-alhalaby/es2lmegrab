@@ -1,0 +1,20 @@
+<%= form_for(@question_tag, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @question_tag.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@question_tag.errors.count, "error") %> prohibited this question_tag from being saved:</h4>
+
+      <ul>
+      <% @question_tag.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
